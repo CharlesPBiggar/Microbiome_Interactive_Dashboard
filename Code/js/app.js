@@ -1,19 +1,23 @@
 function buildMetadata(sample) {
 
-  // @TODO: Complete the following function that builds the metadata panel
-
-  // Use `d3.json` to fetch the metadata for a sample
-    // Use d3 to select the panel with id of `#sample-metadata`
-
-    // Use `.html("") to clear any existing metadata
-
-    // Use `Object.entries` to add each key and value pair to the panel
-    // Hint: Inside the loop, you will need to use d3 to append new
-    // tags for each key-value in the metadata.
-
-    // BONUS: Build the Gauge Chart
-    // buildGauge(data.WFREQ);
-}
+  // fetch the metadata for a sample with d3.js
+  var metadataPanelUrl = `/metadata/${sample}`
+  d3.json(metadataPanelUrl).then((data) => {
+    
+    //Select the Panel with id of `#sample-metadata`
+      var PANEL = d3.select("#sample-metadata");
+    
+      PANEL.html(""); //Clear any Existing Metadata
+    
+      /* Using Object.entries to add each Key & Value Pair to the Panel and 
+         use d3 to append new tags for tach Key-Value pair in the Metadata */
+      Object.entries(data).forEach(([key, value]) => {
+          PANEL.append("h6").text(`${key}:${value}`);
+      })
+      //Gauge Chart
+      // buildGauge(data.WFREQ); **Come back to build this function out
+  })
+};
 
 function buildCharts(sample) {
 
