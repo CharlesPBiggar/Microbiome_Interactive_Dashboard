@@ -21,34 +21,57 @@ function buildMetadata(sample) {
 
 function buildCharts(sample) {
   
-  // Fetch the Sample Data for the Plots using d3
-  d3.json(`/samples/${sample}`).then((data) => {
-      
-      // define data for use in below charts
-      const otu_ids = data.otu_ids;
-      const otu_labels = data.otu_labels;
-      const sample_values = data.sample_values;
-  
-      // build out pie chart
-      let pieData = [{
-          
-          // used slice() to Grab the Top 10 sample_values
-          values: sample_values.slice(0, 10),
-          labels: otu_ids.slice(0, 10),
-          hovertext: otu_labels.slice(0, 10),
-          hoverinfo: "hovertext",
-          type: "pie"
-      
-      }];
-      
-      let pieLayout = {
-          margin: { t: 0, l: 0 }
-      };
-      
-      // plot the pie chart w/in pie tag in index.html    
-      Plotly.plot("pie", pieData, pieLayout)        
+    // Fetch the Sample Data for the Plots using d3
+    d3.json(`/samples/${sample}`).then((data) => {
         
-  });
+        // define data for use in below charts
+        const otu_ids = data.otu_ids;
+        const otu_labels = data.otu_labels;
+        const sample_values = data.sample_values;
+    
+        // build out pie chart
+        let pieData = [{
+            
+            // used slice() to Grab the Top 10 sample_values
+            values: sample_values.slice(0, 10),
+            labels: otu_ids.slice(0, 10),
+            hovertext: otu_labels.slice(0, 10),
+            hoverinfo: "hovertext",
+            type: "pie"
+        
+        }];
+        
+        let pieLayout = {
+            margin: { t: 0, l: 0 }
+        };
+        
+        // plot the pie chart w/in pie tag in index.html    
+        Plotly.plot("pie", pieData, pieLayout)        
+    
+        // build out bubble chart
+        let bubbleData = [{
+            
+            x: otu_ids,
+            y: sample_values,
+            text: otu_labels,
+            mode: "markers",
+            marker: {
+                size: sample_values,
+                color: otu_ids,
+                colorscale: "Earth"
+            }
+        }];
+        
+        let bubbleLayout = {
+            margin: { t: 0 },
+            hovermode: "closests",
+            xaxis: { title: "OTU ID"}
+        };
+
+        // plot the bubble chart w/in bubble tag in index.html
+        Plotly.plot("bubble", bubbleData, bubbleLayout);
+
+    });
 }
 
 function init() {
