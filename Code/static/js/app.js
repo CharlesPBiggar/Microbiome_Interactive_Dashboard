@@ -5,17 +5,15 @@ function buildMetadata(sample) {
   d3.json(metadataPanelUrl).then((data) => {
     
     //Select the Panel with id of `#sample-metadata`
-      var PANEL = d3.select("#sample-metadata");
+    var PANEL = d3.select("#sample-metadata");
     
-      PANEL.html(""); //Clear any Existing Metadata
+    PANEL.html(""); //Clear any Existing Metadata
     
-      /* Using Object.entries to add each Key & Value Pair to the Panel and 
-         use d3 to append new tags for tach Key-Value pair in the Metadata */
-      Object.entries(data).forEach(([key, value]) => {
-          PANEL.append("h6").text(`${key}:${value}`);
-      })
-      //Gauge Chart
-      // buildGauge(data.WFREQ); **Come back to build this function out
+    /* Using Object.entries to add each Key & Value Pair to the Panel and 
+       use d3 to append new tags for tach Key-Value pair in the Metadata */
+    Object.entries(data).forEach(([key, value]) => {
+      PANEL.append("h6").text(`${key}:${value}`);
+    })
   })
 };
 
