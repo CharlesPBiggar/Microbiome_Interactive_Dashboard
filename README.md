@@ -1,4 +1,4 @@
-# Microbiome_Interactive_Dashboard
+# Microbiome InteractiveDashboard
 
 ![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.jpg)
 
@@ -14,7 +14,7 @@ Interactive Plots:
 
 * Both pull data from the samples route (`/samples/<sample>`) in our flask application
 
-* Both display data from the attached database files (DataSets/belly_button.sqlite)
+* Both display data from the attached database files (https://github.com/CharlesPBiggar/Microbiome_Interactive_Dashboard/tree/master/Code/db)
 
 * For more information on Plotly:
     * refer to the [Plotly.js Documentation](https://plot.ly/javascript/)
