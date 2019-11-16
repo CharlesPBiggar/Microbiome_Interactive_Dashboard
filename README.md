@@ -58,4 +58,4 @@ To run file locally:
 
 This application was deployed Heroku!
 
-* To see the final product, please visit: 
+* To see the final product, please visit: https://microbiomedashboard.herokuapp.com/
