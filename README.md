@@ -1,4 +1,4 @@
-# Microbiome InteractiveDashboard
+# Microbiome Interactive Dashboard
 
 ![Bacteria by filterforge.com](Images/microbes.jpg)
 
