@@ -2,15 +2,15 @@
 
 ![Bacteria by filterforge.com](Images/microbes.jpg)
 
-This project was build off the dataset from the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
+This project was built off the dataset from the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
 
 ## Dive into the Dashboard
 
 Interactive Plots:
 
-* This interactive dashboard was build using Plotly.js to build the interactive charts
+* This interactive dashboard was built using Plotly.js to build the interactive charts
 
-* Both the Pie Chart and the Bubble Chart in this Dashboard were build using Plotly
+* Both the Pie Chart and the Bubble Chart in this Dashboard were built using Plotly
 
 * Both pull data from the samples route (`/samples/<sample>`) in our flask application
 
