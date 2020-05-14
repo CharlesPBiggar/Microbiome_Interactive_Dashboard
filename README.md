@@ -1,6 +1,6 @@
 # Microbiome InteractiveDashboard
 
-![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.jpg)
+![Bacteria by filterforge.com](Images/microbes.jpg)
 
 This project was build off the dataset from the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
 
