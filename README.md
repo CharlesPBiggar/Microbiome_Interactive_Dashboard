@@ -1,4 +1,4 @@
-# Microbiome Interactive Dashboard - Testing for CC
+# Microbiome Interactive Dashboard
 
 ![Bacteria by filterforge.com](Images/microbes.jpg)
 
